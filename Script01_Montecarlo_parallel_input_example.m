@@ -2,7 +2,7 @@
 %% Hans Kainz, University of Vienna, hans.kainz@univie.ac.at
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all; close all; format compact; clc; fclose all;
-baseDir = 'C:\Users\Hans\Documents\GitHub\MuscleCoordinationRetraining\inputData\PA02\';
+baseDir = fullfile(pwd, 'inputData', 'PA02');
 % monte carlo input
 nr_simulations = 10000;
 % load weighting set
