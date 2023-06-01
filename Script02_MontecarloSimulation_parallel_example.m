@@ -10,7 +10,7 @@ cd(baseDir);
 % monte carlo input
 nr_simulations = 10000;
 % load input
-load('C:\Users\Hans\Documents\GitHub\MuscleCoordinationRetraining\inputData\PA02\INPUT_PA02.mat');
+load(fullfile(pwd, 'inputData', 'PA02\INPUT_PA02.mat')); % created with Script01_Montecarlo_parallel_input_example.m script
 geometryPath = [baseDir '\Geometry'] ; % full path to geometry folder for Model. If pointing to Geometry folder in OpenSim install, leave this field blank: []
 if ~isempty(geometryPath)
     org.opensim.modeling.ModelVisualizer.addDirToGeometrySearchPaths(geometryPath)
