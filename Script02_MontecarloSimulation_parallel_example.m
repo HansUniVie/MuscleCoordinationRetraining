@@ -4,8 +4,8 @@
 %% Uhlrich SD, Jackson RW, Seth A, Kolesar JA, Delp SL, 2022. Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force. Scientific Reports 12, 9842. https://doi.org/10.1038/s41598-022-13386-9
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all; close all; 
-addpath('C:\Users\Hans\Documents\GitHub\MatlabStaticOptimization\Utilities')
-baseDir = 'C:\Users\Hans\Documents\GitHub\MuscleCoordinationRetraining\inputData\PA02\';
+addpath((fullfile(pwd, 'MatlabStaticOptimization\Utilities'))); % scripts from https://github.com/stanfordnmbl/MatlabStaticOptimization
+baseDir = fullfile(pwd, 'inputData', 'PA02');
 cd(baseDir);
 % monte carlo input
 nr_simulations = 10000;
