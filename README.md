@@ -10,7 +10,9 @@ Additionally the repository includes all musculoskeletal OpenSim models and expe
 # Publiation
 
 Please cite this paper if you use this code in your work:
-Hans Kainz, Willi Koller, Elias Wallnöfer, Till R Bader, Gabriel T Mindler, Andreas Kranz. A framework based on subject-specific musculoskeletal models and Monte Carlo simulations to personalize muscle coordination retraining
+
+Hans Kainz, Willi Koller, Elias Wallnöfer, Till R Bader, Gabriel T Mindler, Andreas Kranz. 
+A framework based on subject-specific musculoskeletal models and Monte Carlo simulations to personalize muscle coordination retraining
 
 Monte Carlo simulations are based on the static optimization script from Scott Uhlrich https://github.com/stanfordnmbl/MatlabStaticOptimization
 Publication: Uhlrich SD, Jackson RW, Seth A, Kolesar JA, Delp SL, 2022. Muscle coordination retraining inspired by musculoskeletal simulations reduces knee contact force. Scientific Reports 12, 9842. https://doi.org/10.1038/s41598-022-13386-9
