@@ -2,7 +2,7 @@
 %% Hans Kainz, University of Vienna, hans.kainz@univie.ac.at
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all; close all; format compact; clc; fclose all;
-baseDir = fullfile(pwd, 'inputData', 'PA02');
+baseDir = [fullfile(pwd, 'inputData', 'PA02') filesep];
 % monte carlo input
 nr_simulations = 10000;
 % load weighting set
@@ -17,10 +17,10 @@ end
 % % % Fill Path names
 for N = 1 : 10000
 INPUTS(N).trialname = 'P02_W_8' ; 
-INPUTS(N).forceFilePath = [baseDir 'grf.mot'] ;  % Full path of forces file
+INPUTS(N).forceFilePath = fullfile(baseDir, 'grf.mot') ;  % Full path of forces file
 
-INPUTS(N).ikFilePath = [baseDir '\IK_PA02_w8.mot'] ; % Full path of IK file
-INPUTS(N).idFilePath = [baseDir '\ID_PA02_w8.sto'] ; % Full path of ID file
+INPUTS(N).ikFilePath = fullfile(baseDir, 'IK_PA02_w8.mot') ; % Full path of IK file
+INPUTS(N).idFilePath = fullfile(baseDir, 'ID_PA02_w8.sto') ; % Full path of ID file
 INPUTS(N).emgFilePath = {}; %[baseDir '\EMG_allMuscles.sto'] ; % location of *.mot file with normalized EMG (if using EMG)
 
 INPUTS(N).modelDir = [baseDir] ; % full path to folder where model is
@@ -89,9 +89,8 @@ INPUTS(N).passiveForceStrains = [0 0.7] ; % Default = [0,.7] this is strain at z
                                         
                           
     t=zeros(1,nr_simulations);  
-    INPUTS(N).outputFilePath = [baseDir 'MonteCarlo\S_' (char(num2str(N)))] ; % full path for SO & JRA outputs
+    INPUTS(N).outputFilePath = [fullfile(baseDir, ['MonteCarlo\S_' (char(num2str(N)))]) filesep] ; % full path for SO & JRA outputs
     INPUTS(N).overrideWeights = W_set(N,:); % A column vector the same size as weights % W_ref; 
 end    
 
-
-
+save(fullfile(baseDir, 'INPUT_PA02.mat'), 'INPUTS');
