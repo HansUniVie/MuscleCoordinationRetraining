@@ -1,18 +1,18 @@
  clear all; close all; format compact; clc; fclose all;
-baseDir = 'C:\Users\Hans\Documents\GitHub\MuscleCoordinationRetraining\inputData\PA02\MonteCarlo\' ; % Base Directory to base results directory.
+baseDir = fullfile(pwd, 'inputData', 'PA02', 'MonteCarlo') ; % Base Directory to base results directory.
 BW = 39.3*9.81; % body weight
 % monte carlo input
 nr_simulations = 10000;
 
 % get muscle forces
 for N = 1 : 10000
-    PA02.MF.(['S_' (char(num2str(N)))]) = load_sto_file([baseDir 'S_' (char(num2str(N))) 'results_forces.sto']);  
+    PA02.MF.(['S_' (char(num2str(N)))]) = load_sto_file(fullfile(baseDir, ['S_' (char(num2str(N)))], 'results_forces.sto'));  
 disp((N))
 end
 
 % % get JCF
 for N = 1 : 10000
-    PA02.JCF.(['S_' (char(num2str(N)))]) = load_sto_file([baseDir '\S_' (char(num2str(N))) '\results_JointReaction_JointRxn_ReactionLoads.sto']);
+    PA02.JCF.(['S_' (char(num2str(N)))]) = load_sto_file(fullfile(baseDir, ['S_' (char(num2str(N)))], 'results_JointReaction_JointRxn_ReactionLoads.sto'));
     disp((N))
 end
 JCF_set = {'hip_r_on_femur_r_in_femur_r_fx' 'hip_r_on_femur_r_in_femur_r_fy' 'hip_r_on_femur_r_in_femur_r_fz' 'walker_knee_r_on_tibia_r_in_tibia_r_fx' 'walker_knee_r_on_tibia_r_in_tibia_r_fy' 'walker_knee_r_on_tibia_r_in_tibia_r_fz' 'patellofemoral_r_on_patella_r_in_patella_r_fx' 'patellofemoral_r_on_patella_r_in_patella_r_fy' 'patellofemoral_r_on_patella_r_in_patella_r_fz' 'ankle_r_on_talus_r_in_talus_r_fx' 'ankle_r_on_talus_r_in_talus_r_fy' 'ankle_r_on_talus_r_in_talus_r_fz'};
